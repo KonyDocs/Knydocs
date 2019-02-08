@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="default.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" /><title>GitTest PouchDB- Browser Widget</title>
+        <link href="Resources/Stylesheets/pouchdb.css" rel="stylesheet" type="text/css" />
+        <script src="../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../default.htm#GitTest.htm">Open topic with navigation</a>
+        </p>
+        <h1>GitTest PouchDB- Browser Widget</h1>
+        <p>The Browser widget is a container that displays HTML/JavaScript content in your application. This widget helps you to view HTML/JavaScript content without navigating away from the application. Browser widgets also allow you to enable third-party cookies and enable communication to the native platforms for using platform-specific capabilities.</p>
+        <p>The three key ways to load the content of a Browser widget are as follows:</p>
+        <ul>
+            <li value="1"><b>HTML content</b>: Load the content of a Browser widget with HTML code by using this method. For example, if you want to load a YouTube URL in your application, you must use the iframe tag to embed it to the HTML script. You can then add this HTML script in the required Browser widget to view the URL.</li>
+            <li value="2"><b>Javascript file</b>: Access several JavaScript capabilities that are not supported in Kony. You can write your code in a JavaScript file and add it to the Localfiles section of your application. You can then execute the JavaScript content by using a Browser widget. For example, you can use external JavaScript files to capture signatures in your application.</li>
+            <li value="3"><b>URL</b>: Use this method when the content that is to be loaded in a Browser widget is susceptible to a lot of changes. You should publish the content to a server and then load that URL to the Browser widget. A perfect example for this is the Terms and Conditions page. As the terms and conditions of an organization are susceptible to a lot of changes, you need not republish your application whenever there is a change in the terms and conditions.</li>
+        </ul>
+        <p>Widgets are normally added to your Kony application using Kony Visualizer, but can also be added from code. For general information on using widgets in Visualizer, see Designing an Application in the Kony Visualizer User Guide.</p>
+        <p>For general information on the Browser widget see the Browser topic in the Kony Visualizer User Guide.</p>
+        <p>This widget supports drag and drop of text for iOS 11 on iPad.</p>
+        <p class="Note">For a more hands-on approach on the functionality of the Browser Widget, import and preview the Browser Feature app by using Kony Visualizer.</p>
+        <p>The Browser widget capabilities can be broadly categorized into the following:</p>
+        <h2>Creating a Browser using a constructor: kony.ui.Browser</h2>
+        <p>You can dynamically create an instance of the Browser widget as follows.</p><pre>var webtemp = new kony.ui.Browser(basicConf, layoutConf, pspConf)</pre>
+        <p>&#160;</p><pre><prem>var urlConf = {
+	URL: "help/index.html", 
+	requestMethod:constants.BROWSER_REQUEST_METHOD_GET
+};
+
+var webBasic = {
+	id:"browserID", 
+	isVisible:true, 
+	requestURLConfig:UrlConf};
+var webLayout = {containerHeight:100};
+var webPsp={};
+var browserID= new kony.ui.Browser(webBasic, webLayout, webPsp);
+frm1.add(browserID);</prem></pre>
+        <p>&#160;</p><pre>kony.application.setApplicationBehaviors({
+dynamicTypeList:
+{enableChangeTextSizeFromAccessibility : true, fontTextStyle : constants.FONT_TEXT_STYLE_BODY}
+});</pre>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkBottom"><a href="../default.htm#GitTest.htm">Open topic with navigation</a>
+        </p>
+    </body>
+</html>
