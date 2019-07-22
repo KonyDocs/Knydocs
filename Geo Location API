@@ -1,0 +1,60 @@
+The GeoLocation API defines a high-level interface to location information, such as latitude and longitude associated with the mobile device. The API uses the common sources of location information such as the Global Positioning System (GPS) to infer details such as IP address, RFID, WiFi and Bluetooth MAC addresses, and GSM/CDMA cell IDs. This API does not always return the device's actual location.
+
+The Geolocation API uses the `kony.location` namespace and the following API elements.
+
+|Function	|Description|
+|---------------|:----------|
+|[kony.location.getCurrentPosition](https://github.com/premgvg/docs/wiki/kony.location.getCurrentPosition)	|Retrieves the current location of the device.|
+|[kony.location.watchPosition](https://github.com/premgvg/docs/wiki/kony.location.watchPosition)	|Sets callbacks that report the watch's position.|
+|[kony.location.clearWatch](https://github.com/premgvg/docs/wiki/kony.location.ClearWatch)	|Verifies the value of the given watchID argument. If the value corresponds to a previously started watch process, the process is stopped immediately.|
+
+The API is designed to enable both one-shot position `getCurrentPosition` requests and repeated `watchPosition` updates, as well as the ability to explicitly query the cached positions. Location information is represented by latitude and longitude coordinates.
+
+The GeoLocation APIs are modeled after W3C GeoLocation specification. You can watch a video of the Geolocation [here](https://youtu.be/IrQ3XbR7buM). 
+
+### Example
+
+```javascript
+/******************************************************************
+ *	Name    : getCurrentPosition function
+ *	Author  : Kony
+ *	Purpose : This function helps to get the current location
+ *******************************************************************/
+function getPosition() {
+    var positionoptions = {
+        timeout: 15000
+    }; // 15 secs 
+    kony.location.getCurrentPosition(successcallback, errorcallback, positionoptions);
+}
+
+// Callback that is executed on success of getCurrentPosition function.
+function successcallback(position) {
+    var geoPosition = "Latitude: " + position.coords.latitude;
+    geoPosition = geoPosition + " Longitude: " + position.coords.longitude;
+    geoPosition = geoPosition + " Altitude: " + position.coords.altitude;
+    geoPosition = geoPosition + " Accuracy: " + position.coords.accuracy;
+    geoPosition = geoPosition + " Altitude Accuracy: " + position.coords.altitudeAccuracy;
+    geoPosition = geoPosition + " Heading: " + position.coords.heading;
+    geoPosition = geoPosition + " Speeding: " + position.coords.speeding;
+    geoPosition = geoPosition + " Timestamp: " + position.timestamp;
+    alert(geoPosition);
+}
+
+// Callback that is executed on error of getCurrentPosition function.
+function errorcallback(positionerror) {
+    var errorMesg = "Error code: " + positionerror.code;
+    errorMesg = errorMesg + " message: " + positionerror.message;
+    alert(errorMesg);
+}
+```
+
+You can get the current position of the device using the [getCurrentPosition](https://github.com/premgvg/docs/wiki/kony.location.getCurrentPosition) function, continue to watch the position of the device using the [watchPosition](https://github.com/premgvg/docs/wiki/kony.location.watchPosition) function, and stop tracking the device movement by using the [clearWatch](https://github.com/premgvg/docs/wiki/kony.location.ClearWatch) function.
+
+**Note**: The phone.mylocation function is deprecated and should not be used in new software. However, there is still [documentation](https://docs.kony.com/konylibrary/visualizer/New%20folder/viz_api_dev_guide/content/kony.location_deprecated.htm#phone.my) for it.
+
+To view the functionality of the Geolocation API in action, download the sample Location application from the link [here](https://docs.kony.com/konylibrary/visualizer/zip/sampleapps/LocationApp.zip). Once the application is downloaded, build and preview the application using the Kony Quantum App.
+
+
+ 
+
+ 
