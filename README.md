@@ -1,2 +1,3 @@
-# Docs Page Github Pages Test
-Documentation Library hosting test
+# Kony Docs
+This page serves as the landing page for the POC to test GitHub as a possible candidate to hose Kony docs. 
+
